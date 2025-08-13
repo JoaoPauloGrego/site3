@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';
+import Card from './view/Card';
+import { GlobalStyle } from './styles/styledComponents.js';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  align-items: center;
+
+  @media(min-width: 768px){
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+`
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <GlobalStyle/>
+  <h1 style={{textAlign: 'center', marginBottom: '40px'}}>Página responsiva</h1>
+  <Container>
+    <Card/>
+
+  </Container>
+  </>
   );
 }
-
 export default App;
